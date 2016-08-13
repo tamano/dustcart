@@ -1,5 +1,5 @@
 require "dustcart/version"
+require "dustcart/cli"
 
 module Dustcart
-  # Your code goes here...
 end
