@@ -8,4 +8,6 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'terminal-notifier-guard'
+  gem 'listen', '3.1.1'
+  gem 'ruby_dep', '1.3.1'
 end
