@@ -1,5 +1,10 @@
 # Dustcart
 
+[![CircleCI](https://circleci.com/gh/tamano/dustcart.svg?style=svg)](https://circleci.com/gh/tamano/dustcart)
+[![Code Climate](https://codeclimate.com/github/tamano/dustcart/badges/gpa.svg)](https://codeclimate.com/github/tamano/dustcart)
+[![Test Coverage](https://codeclimate.com/github/tamano/dustcart/badges/coverage.svg)](https://codeclimate.com/github/tamano/dustcart/coverage)
+[![Issue Count](https://codeclimate.com/github/tamano/dustcart/badges/issue_count.svg)](https://codeclimate.com/github/tamano/dustcart)
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dustcart`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
