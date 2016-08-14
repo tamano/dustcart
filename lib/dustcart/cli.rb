@@ -18,9 +18,8 @@ module Dustcart
         exit 1
       end
 
-
-      # TODO: call DSL
-      # puts "TARGET: #{instruction_file}"
+      dsl = DSL.new
+      dsl.load(instruction_file)
     end
 
     desc 'version', 'show version information.'
