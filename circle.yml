@@ -5,7 +5,3 @@ machine:
 dependencies:
   pre:
     - gem install bundler --pre
-
-test:
-  pre:
-    - bundle exec rubocop
