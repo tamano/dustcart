@@ -34,13 +34,8 @@ module Dustcart
 
       method = args.first
 
-      case method
-      when :input
-        input = Group.new(Input, temp_dir)
-        input.instance_eval(&block)
-      else
-        raise "invalid group type (#{method})"
-      end
+      group = Group.new(method, temp_dir)
+      group.instance_eval(&block)
     end
   end
 end
