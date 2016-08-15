@@ -39,6 +39,9 @@ module Dustcart
         FileUtils.mkdir_p(to_dir)
       end
 
+      def precheck
+      end
+
       class << self
         attr_reader :defined_attributes
 

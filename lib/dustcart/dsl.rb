@@ -40,6 +40,7 @@ module Dustcart
       end
 
       resource = klass.new(temp_dir, name, &block)
+      resource.precheck
       resource.run
     end
 
