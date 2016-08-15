@@ -53,10 +53,10 @@ module Dustcart
       case group_class
       when :input
         INPUT_RESOURCES.each { |v| require v }
-        @group_type = Input
+        @group_type = Resource::Input
       when :output
         OUTPUT_RESOURCES.each { |v| require v }
-        @group_type = Output
+        @group_type = Resource::Output
       else
         raise "invalid group type (#{group_class})"
       end
