@@ -1,3 +1,5 @@
 dump_site '/tmp/backup'
 
-file '/tmp/target_file'
+group :input do
+  file '/tmp/target_file'
+end

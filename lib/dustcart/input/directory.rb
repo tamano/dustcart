@@ -1,14 +1,14 @@
 module Dustcart
-  module Resource
-    # resource: file
-    class File < Base
+  module Input
+    # input: directory
+    class Directory < Base
       define_attribute :label
 
       def precheck
         super
 
-        raise <<-EOS.unindent unless Object::File.file?(from)
-          target(#{from}) does not exists or is not a regular file
+        raise <<-EOS.unindent unless Object::File.directory?(from)
+          target(#{from}) does not exists or is not a directory
         EOS
 
         raise <<-EOS.unindent if attributes.key?(:label) && attributes[:label] !~ /^\w+$/
@@ -20,7 +20,7 @@ module Dustcart
         super
 
         target = "#{to_dir}/#{attributes[:label]}"
-        FileUtils.cp(from, target)
+        FileUtils.cp_r(from, target)
       end
     end
   end
