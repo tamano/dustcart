@@ -1,5 +1,6 @@
 require 'dustcart/resource/base'
 require 'dustcart/resource/directory'
+require 'dustcart/resource/file'
 
 module Dustcart
   # resource facade
