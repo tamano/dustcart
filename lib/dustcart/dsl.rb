@@ -38,6 +38,9 @@ module Dustcart
       when :input
         input = Group.new(Input, temp_dir)
         input.instance_eval(&block)
+      when :output
+        output = Group.new(Output, temp_dir)
+        output.instance_eval(&block)
       else
         raise "invalid group type (#{method})"
       end
