@@ -7,7 +7,7 @@ module Dustcart
       def precheck
         super
 
-        raise <<-EOS.unindent unless File.directory?(from)
+        raise <<-EOS.unindent unless Object::File.directory?(from)
           target(#{from}) does not exists or is not a directory
         EOS
 
