@@ -41,6 +41,7 @@ module Dustcart
 
     private
 
+    # ignore :reek:UtilityFunction
     def to_camel_case(str)
       str.split('_').map(&:capitalize).join
     end
@@ -52,10 +53,10 @@ module Dustcart
     def initialize_classes(group_class)
       case group_class
       when :input
-        INPUT_RESOURCES.each { |v| require v }
+        INPUT_RESOURCES.each { |file| require file }
         @group_type = Resource::Input
       when :output
-        OUTPUT_RESOURCES.each { |v| require v }
+        OUTPUT_RESOURCES.each { |file| require file }
         @group_type = Resource::Output
       else
         raise "invalid group type (#{group_class})"
