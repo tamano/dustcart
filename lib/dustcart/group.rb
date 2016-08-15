@@ -30,4 +30,3 @@ module Dustcart
     end
   end
 end
-
