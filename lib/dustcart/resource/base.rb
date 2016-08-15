@@ -13,7 +13,7 @@ module Dustcart
         @from = from
         @attributes ||= {}
 
-        instance_eval(&block)
+        instance_eval(&block) if block
       end
 
       def method_missing(method, *args, &block)
@@ -36,7 +36,7 @@ module Dustcart
       end
 
       def run
-        raise 'Base class is not executable.'
+        FileUtils.mkdir_p(to_dir)
       end
 
       class << self

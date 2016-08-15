@@ -5,8 +5,10 @@ module Dustcart
       define_attribute :label
 
       def run
-        # puts "#{@from} -> #{@to_dir}"
-        # p @attributes
+        super
+
+        target = "#{to_dir}/#{attributes[:label]}"
+        FileUtils.cp_r(from, target)
       end
     end
   end
