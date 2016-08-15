@@ -1,15 +1,12 @@
 module Dustcart
   module Resource
     # resource: directory
-    class Directory
-      def initialize(to_dir, from_dir, &block)
-        @to_dir = to_dir
-        @from_dir = from_dir
-        @block = block
-      end
+    class Directory < Base
+      define_attribute :label
 
       def run
-        # puts "#{@from_dir} -> #{@to_dir}"
+        # puts "#{@from} -> #{@to_dir}"
+        # p @attributes
       end
     end
   end

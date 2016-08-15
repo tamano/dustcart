@@ -1,3 +1,4 @@
+require 'dustcart/resource/base'
 require 'dustcart/resource/directory'
 
 module Dustcart
