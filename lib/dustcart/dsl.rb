@@ -34,7 +34,7 @@ module Dustcart
       name = args[0]
 
       begin
-        klass = Resource.get_resource_class(method)
+        klass = Input.get_input_class(method)
       rescue NameError
         super
       end
@@ -46,7 +46,7 @@ module Dustcart
 
     # ignore :reek:UtilityFunction
     def respond_to_missing?(method, *)
-      Resource.get_resource_class(method)
+      Input.get_input_class(method)
       true
     rescue NameError
       false

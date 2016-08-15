@@ -1,16 +1,16 @@
-require 'dustcart/resource/base'
-require 'dustcart/resource/directory'
-require 'dustcart/resource/file'
+require 'dustcart/input/base'
+require 'dustcart/input/directory'
+require 'dustcart/input/file'
 
 module Dustcart
-  # resource facade
-  module Resource
+  # input facade
+  module Input
     class << self
       def to_camel_case(str)
         str.split('_').map(&:capitalize).join
       end
 
-      def get_resource_class(method)
+      def get_input_class(method)
         const_get(to_camel_case(method.to_s))
       end
     end

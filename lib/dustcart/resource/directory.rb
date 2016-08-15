@@ -1,6 +1,6 @@
 module Dustcart
-  module Resource
-    # resource: directory
+  module Input
+    # input: directory
     class Directory < Base
       define_attribute :label
 

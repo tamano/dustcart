@@ -1,6 +1,6 @@
 module Dustcart
-  module Resource
-    # resource: file
+  module Input
+    # input: file
     class File < Base
       define_attribute :label
 

@@ -1,6 +1,6 @@
 module Dustcart
-  module Resource
-    # base class for resource
+  module Input
+    # base class for input
     class Base
       attr_reader :to_dir
       attr_reader :from
