@@ -9,4 +9,8 @@ group :input do
   end
 
   directory '/tmp/target_directory3'
+
+  file '/tmp/target_file' do
+    label 'backup_file'
+  end
 end

@@ -22,34 +22,25 @@ module Dustcart
       @_temp_dir = "#{path}/#{time_str}"
     end
 
+    def group(*args, &block)
+      raise ArgumentError, "wrong number of arguments (#{args.size} for 1)" unless args.size == 1
+
+      method = args.first
+
+      case method
+      when :input
+        input = Group.new(Input, temp_dir)
+        input.instance_eval(&block)
+      else
+        raise "invalid group type (#{method})"
+      end
+    end
+
     def temp_dir
       return @_temp_dir if @_temp_dir
 
       time_str = Time.now.strftime('%Y%m%d%H%M%S')
       @_temp_dir = "/tmp/#{time_str}"
-    end
-
-    def method_missing(method, *args, &block)
-      super unless args.size == 1
-      name = args[0]
-
-      begin
-        klass = Input.get_input_class(method)
-      rescue NameError
-        super
-      end
-
-      resource = klass.new(temp_dir, name, &block)
-      resource.precheck
-      resource.run
-    end
-
-    # ignore :reek:UtilityFunction
-    def respond_to_missing?(method, *)
-      Input.get_input_class(method)
-      true
-    rescue NameError
-      false
     end
   end
 end

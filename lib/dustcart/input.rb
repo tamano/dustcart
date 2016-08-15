@@ -10,7 +10,7 @@ module Dustcart
         str.split('_').map(&:capitalize).join
       end
 
-      def get_input_class(method)
+      def get_class(method)
         const_get(to_camel_case(method.to_s))
       end
     end
