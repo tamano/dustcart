@@ -9,7 +9,7 @@ module Dustcart
           super
 
           raise <<-EOS.unindent unless Object::File.file?(from)
-            target(#{from}) does not exists or is not a regular file
+            target(#{from}) is not a regular file
           EOS
 
           raise <<-EOS.unindent if attributes.key?(:label) && attributes[:label] !~ /^\w+$/
