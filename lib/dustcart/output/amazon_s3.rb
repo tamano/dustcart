@@ -2,6 +2,7 @@ module Dustcart
   module Resource
     module Output
       # output: S3
+      # ignore :reek:UncommunicativeModuleName
       class AmazonS3 < Base
         define_attribute :access_key_id
         define_attribute :secret_access_key
