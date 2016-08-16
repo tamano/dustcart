@@ -2,17 +2,14 @@ module Dustcart
   module Resource
     # base class for resources
     class Base
-      attr_reader :to_dir
-      attr_reader :from
+      attr_reader :dump_dir
       attr_reader :attributes
 
       @defined_attributes ||= {}
 
-      def initialize(to_dir, from, &block)
-        @to_dir = to_dir
-        @from = from
+      def initialize(dir, &block)
+        @dump_dir = dir
         @attributes ||= {}
-
         instance_eval(&block) if block
       end
 

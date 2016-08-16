@@ -8,6 +8,7 @@ module Dustcart
     ].freeze
 
     OUTPUT_RESOURCES = [
+      'dustcart/output/base',
       'dustcart/output/amazon_s3'
     ].freeze
 
