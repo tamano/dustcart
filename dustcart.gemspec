@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'thor'
   spec.add_dependency 'unindent'
+  spec.add_dependency 'aws-sdk', '~> 2'
 end
