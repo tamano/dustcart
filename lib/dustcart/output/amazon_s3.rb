@@ -1,3 +1,4 @@
+require 'aws-sdk'
 require 'helper/zip_file_generator'
 
 module Dustcart
@@ -43,6 +44,18 @@ module Dustcart
         def generate_zip_file
           zf = ZipFileGenerator.new(from_dir, zip_file_name)
           zf.write
+        end
+
+        def upload_zip_file
+          resource = Aws::S3::Resource.new(
+            access_key_id: access_key_id,
+            secret_access_key: secret_access_key,
+            region: region
+          )
+
+          obj_name = File.basename(zip_file_name)
+          obj = resource.bucket(bucket).object(obj_name)
+          obj.upload_file(zip_file_name)
         end
       end
     end
