@@ -54,14 +54,18 @@ module Dustcart
     def initialize_classes(group_class)
       case group_class
       when :input
-        INPUT_RESOURCES.each { |file| require file }
+        require_files(INPUT_RESOURCES)
         @group_type = Resource::Input
       when :output
-        OUTPUT_RESOURCES.each { |file| require file }
+        require_files(OUTPUT_RESOURCES)
         @group_type = Resource::Output
       else
         raise "invalid group type (#{group_class})"
       end
+    end
+
+    def require_files(files)
+      files.each { |file| require file }
     end
   end
 end
