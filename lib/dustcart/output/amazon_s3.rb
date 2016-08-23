@@ -1,3 +1,5 @@
+require 'helper/zip_file_generator'
+
 module Dustcart
   module Resource
     module Output
@@ -8,6 +10,14 @@ module Dustcart
         define_attribute :secret_access_key
         define_attribute :region
         define_attribute :bucket
+
+        attr_reader :zip_file_name
+
+        def initialize(from_dir, mode, &block)
+          super(from_dir, mode, &block)
+
+          @zip_file_name = "#{from_dir}.zip"
+        end
 
         def precheck
           super
@@ -26,6 +36,13 @@ module Dustcart
 
         def run
           super
+        end
+
+        private
+
+        def generate_zip_file
+          zf = ZipFileGenerator.new(from_dir, zip_file_name)
+          zf.write
         end
       end
     end
