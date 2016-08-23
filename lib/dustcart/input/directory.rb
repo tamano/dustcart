@@ -12,7 +12,7 @@ module Dustcart
             target(#{from}) is not a directory
           EOS
 
-          raise <<-EOS.unindent if attributes.key?(:label) && attributes[:label] !~ /^\w+$/
+          raise <<-EOS.unindent if attributes.key?(:label) && label !~ /^\w+$/
             label should be word characters ([a-zA-Z0-9_]+)
           EOS
         end
@@ -20,7 +20,7 @@ module Dustcart
         def run
           super
 
-          target = "#{to_dir}/#{attributes[:label]}"
+          target = "#{to_dir}/#{label}"
           FileUtils.cp_r(from, target)
         end
       end
