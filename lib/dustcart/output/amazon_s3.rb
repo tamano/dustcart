@@ -37,6 +37,9 @@ module Dustcart
 
         def run
           super
+
+          generate_zip_file
+          upload_zip_file
         end
 
         private
