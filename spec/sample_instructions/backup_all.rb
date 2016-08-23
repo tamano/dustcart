@@ -14,3 +14,14 @@ group :input do
     label 'backup_file'
   end
 end
+
+group :output do
+  amazon_s3 :all do
+    access_key_id 'MY_ACCESS_KEY_ID'
+    secret_access_key 'MY_SECRET_ACCESS_KEY'
+    region 'TARGET_REGION'
+    bucket 'MY_BACKET'
+  end
+end
+
+# cleanup :all
