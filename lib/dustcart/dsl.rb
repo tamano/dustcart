@@ -30,7 +30,8 @@ module Dustcart
     end
 
     def group(*args, &block)
-      raise ArgumentError, "wrong number of arguments (#{args.size} for 1)" unless args.size == 1
+      size = args.size
+      raise ArgumentError, "wrong number of arguments (#{size} for 1)" unless size == 1
 
       method = args.first
 
