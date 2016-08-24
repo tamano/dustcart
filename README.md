@@ -20,11 +20,8 @@ Install it yourself as:
     - This file would contain sensitive information (such as AWS credential), so it should be have file mode `600`.
     - Sample is [here](https://github.com/tamano/dustcart/blob/master/spec/sample_instructions/backup_all.rb)
 2. Kick command.
-
-
-    $ dustcart exec -f YOUR_CONFIGURATION_FILE
-
-- `-f YOUR_CONFIGURATION_FILE` can be omitted. In that case, `~/.dustcart/default.rb` will be used.
+    - `$ dustcart exec -f YOUR_CONFIGURATION_FILE`
+    - `-f YOUR_CONFIGURATION_FILE` can be omitted. In that case, `~/.dustcart/default.rb` will be used.
 
 ## Details
 
