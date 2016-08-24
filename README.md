@@ -1,5 +1,6 @@
 # Dustcart
 
+[![Gem Version](https://badge.fury.io/rb/dustcart.svg)](https://badge.fury.io/rb/dustcart)
 [![CircleCI](https://circleci.com/gh/tamano/dustcart.svg?style=svg)](https://circleci.com/gh/tamano/dustcart)
 [![Code Climate](https://codeclimate.com/github/tamano/dustcart/badges/gpa.svg)](https://codeclimate.com/github/tamano/dustcart)
 [![Test Coverage](https://codeclimate.com/github/tamano/dustcart/badges/coverage.svg)](https://codeclimate.com/github/tamano/dustcart/coverage)
