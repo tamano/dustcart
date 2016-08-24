@@ -44,9 +44,10 @@ module Dustcart
     end
 
     def cleanup(target)
-      raise "target(#{target}) is not available." unless target == :all
+      raise "target(#{target}) is not available." unless [:all, :except_latest].include?(target)
 
       Dir.glob("#{dump_base}/*").each do |f|
+        next if target == :except_latest && f.start_with?(temp_dir)
         FileUtils.rm_rf(f)
       end
     end

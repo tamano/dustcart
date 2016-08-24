@@ -24,4 +24,4 @@ group :output do
   end
 end
 
-cleanup :all
+cleanup :except_latest
