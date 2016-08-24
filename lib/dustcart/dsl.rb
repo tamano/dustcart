@@ -19,18 +19,17 @@ module Dustcart
     def dump_site(path)
       raise 'dump_site has already set.' if @_temp_dir
 
-      path.chomp!('/')
+      @dump_base = path.chomp('/')
       time_str = Time.now.strftime('%Y%m%d%H%M%S')
-      @_temp_dir = "#{path}/#{time_str}"
-      @dump_base = path
+      @_temp_dir = "#{@dump_base}/#{time_str}"
     end
 
     def temp_dir
       return @_temp_dir if @_temp_dir
 
+      @dump_base = '/tmp/dustcart'
       time_str = Time.now.strftime('%Y%m%d%H%M%S')
-      @_temp_dir = "/tmp/#{time_str}"
-      @dump_base = '/tmp'
+      @_temp_dir = "#{@dump_base}/#{time_str}"
     end
 
     def group(*args, &block)
