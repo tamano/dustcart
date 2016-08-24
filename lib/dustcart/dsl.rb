@@ -1,6 +1,8 @@
 module Dustcart
   # DSL for instruction file
   class DSL
+    attr_reader :dump_base
+
     def initialize
     end
 
@@ -20,6 +22,7 @@ module Dustcart
       path.chomp!('/')
       time_str = Time.now.strftime('%Y%m%d%H%M%S')
       @_temp_dir = "#{path}/#{time_str}"
+      @dump_base = path
     end
 
     def temp_dir
@@ -27,6 +30,7 @@ module Dustcart
 
       time_str = Time.now.strftime('%Y%m%d%H%M%S')
       @_temp_dir = "/tmp/#{time_str}"
+      @dump_base = '/tmp'
     end
 
     def group(*args, &block)
@@ -37,6 +41,14 @@ module Dustcart
 
       group = Group.new(method, temp_dir)
       group.instance_eval(&block)
+    end
+
+    def cleanup(target)
+      raise "target(#{target}) is not available." unless target == :all
+
+      Dir.glob("#{dump_base}/*").each do |f|
+        FileUtils.rm_rf(f)
+      end
     end
   end
 end
