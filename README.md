@@ -21,9 +21,10 @@ Install it yourself as:
     - Sample is [here](https://github.com/tamano/dustcart/blob/master/spec/sample_instructions/backup_all.rb)
 2. Kick command.
 
+
     $ dustcart exec -f YOUR_CONFIGURATION_FILE
 
-    - `-f YOUR_CONFIGURATION_FILE` can be omitted. In that case, `~/.dustcart/default.rb` will be used.
+- `-f YOUR_CONFIGURATION_FILE` can be omitted. In that case, `~/.dustcart/default.rb` will be used.
 
 ## Details
 
