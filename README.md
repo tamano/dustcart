@@ -5,37 +5,32 @@
 [![Test Coverage](https://codeclimate.com/github/tamano/dustcart/badges/coverage.svg)](https://codeclimate.com/github/tamano/dustcart/coverage)
 [![Issue Count](https://codeclimate.com/github/tamano/dustcart/badges/issue_count.svg)](https://codeclimate.com/github/tamano/dustcart)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dustcart`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Dustcart is simple server backup tool inspired by [backup](https://github.com/backup/backup)
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'dustcart'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install dustcart
 
-## Usage
+## Basic usage
 
-TODO: Write usage instructions here
+1. Create your configuration file.
+    - The file instructs which file/directory to backup and to which S3 bucket.
+    - This file would contain sensitive information (such as AWS credential), so it should be have file mode `600`.
+    - Sample is [here](https://github.com/tamano/dustcart/blob/master/spec/sample_instructions/backup_all.rb)
+2. Kick command.
 
-## Development
+    $ dustcart -f YOUR_CONFIGURATION_FILE
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    - `-f YOUR_CONFIGURATION_FILE` can be omitted. In that case, `~/.dustcart/default.rb` will be used.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Details
+
+Please read the [sample file](https://github.com/tamano/dustcart/blob/master/spec/sample_instructions/backup_all.rb).
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dustcart.
+Bug reports and pull requests are welcome on GitHub at https://github.com/tamano/dustcart.
 
