@@ -3,6 +3,7 @@ module Dustcart
   class Group
     INPUT_RESOURCES = [
       'dustcart/input/base',
+      'dustcart/input/file_base',
       'dustcart/input/directory',
       'dustcart/input/file'
     ].freeze
