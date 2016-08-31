@@ -13,8 +13,8 @@ module Dustcart
         def precheck
           super
 
-          raise <<-EOS.unindent if attributes.key?(:label) && label !~ /^\w+$/
-            label should be word characters ([a-zA-Z0-9_]+)
+          raise <<-EOS.unindent if attributes.key?(:label) && label !~ /^[\w.]+$/
+            label should be word characters ([a-zA-Z0-9_.]+)
           EOS
         end
       end
