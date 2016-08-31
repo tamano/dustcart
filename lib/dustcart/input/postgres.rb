@@ -65,6 +65,7 @@ module Dustcart
           "PGPASSWORD=#{Shellwords.escape(pass)}"
         end
 
+        # ignore :reek:FeatureEnvy:
         def options
           options = []
           options << general_options
@@ -73,6 +74,7 @@ module Dustcart
           options.join(' ')
         end
 
+        # ignore :reek:FeatureEnvy:
         def general_options
           options = []
           options << '--format=custom'
@@ -81,6 +83,7 @@ module Dustcart
           options.join(' ')
         end
 
+        # ignore :reek:FeatureEnvy:
         def user_options
           options = []
           options << "--host=#{Shellwords.escape(host)}"
@@ -89,6 +92,7 @@ module Dustcart
           options.join(' ')
         end
 
+        # ignore :reek:FeatureEnvy:
         def target_options
           options = []
           options << "--file=#{Shellwords.escape(to_dir)}/#{Shellwords.escape(label)}"
