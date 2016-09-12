@@ -19,6 +19,15 @@ group :input do
   file '/tmp/target_file' do
     label 'backup_file'
   end
+
+  # backup your postgresql db
+  postgres 'target_db_name' do
+    host '127.0.0.1'
+    port '5432'
+    user 'backup_user'
+    pass 'password'
+  end
+
 end
 
 # where to upload
