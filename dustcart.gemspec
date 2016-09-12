@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'S3 integrated backup tool.'
   spec.description   = 'CLI tool to send files/db_dump to S3.'
   spec.homepage      = 'https://github.com/tamano/dustcart'
-  spec.license       = "MIT"
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
