@@ -15,6 +15,8 @@ module Dustcart
     ].freeze
 
     def initialize(group_class, dir)
+      print_initialize_comment(group_class)
+
       @temp_dir = dir
       initialize_classes(group_class)
     end
@@ -68,6 +70,10 @@ module Dustcart
 
     def require_files(files)
       files.each { |file| require file }
+    end
+
+    def print_initialize_comment(group_class)
+      puts "Group: #{group_class.to_s}"
     end
   end
 end
