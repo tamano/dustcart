@@ -73,7 +73,7 @@ module Dustcart
     end
 
     def print_initialize_comment(group_class)
-      puts "Group: #{group_class.to_s}"
+      puts "Group: #{group_class}"
     end
   end
 end
