@@ -8,6 +8,8 @@ module Dustcart
       @defined_attributes ||= {}
 
       def initialize(dir, &block)
+        print_initialize_comment
+
         @dump_dir = dir
         @attributes ||= {}
         instance_eval(&block) if block
@@ -53,6 +55,12 @@ module Dustcart
           name = name.to_sym
           @defined_attributes[name] = nil unless @defined_attributes.key?(name)
         end
+      end
+
+      private
+
+      def print_initialize_comment
+        puts "  Resource: #{self.class.name.split('::').last}"
       end
     end
   end
