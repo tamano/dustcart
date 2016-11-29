@@ -10,17 +10,17 @@ module Dustcart
         define_attribute :port
         define_attribute :user
         define_attribute :pass
+        define_attribute :command
         attr_reader :database_name
-
-        COMMAND = 'pg_dump'.freeze
 
         def initialize(to_dir, database_name, &block)
           super(to_dir, &block)
           @database_name = database_name
 
-          host  '127.0.0.1'     unless host
-          port  '5432'          unless port
-          label 'database.dump' unless label
+          host    '127.0.0.1'     unless host
+          port    '5432'          unless port
+          label   'database.dump' unless label
+          command 'pg_dump'       unless command
         end
 
         def precheck
@@ -28,8 +28,8 @@ module Dustcart
 
           requirements
 
-          raise <<-EOS.unindent unless SystemCommand.exists?(COMMAND)
-            #{COMMAND} command is not installed
+          raise <<-EOS.unindent unless SystemCommand.exists?(command)
+            #{command} command is not installed
           EOS
 
           raise <<-EOS.unindent unless database_name
@@ -56,7 +56,7 @@ module Dustcart
         def create_dump
           pipeline = CommandPipeline.new
           pipeline.add(
-            "#{password_env} #{COMMAND} #{options} #{Shellwords.escape(database_name)}"
+            "#{password_env} #{Shellwords.escape(command)} #{options} #{Shellwords.escape(database_name)}"
           )
           pipeline.run
         end

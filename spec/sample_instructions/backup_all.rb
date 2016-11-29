@@ -22,6 +22,9 @@ group :input do
 
   # backup your postgresql db
   postgres 'target_db_name' do
+    # if this not specified, pd_dump command in PATH will be used
+    command '/usr/local/bin/pg_dump'
+
     host '127.0.0.1'
     port '5432'
     user 'backup_user'
